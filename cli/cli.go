@@ -2,6 +2,7 @@ package cli
 
 import (
 	"dam-video-injector-backend/apicall"
+	"dam-video-injector-backend/videodl"
 	"errors"
 "github.com/urfave/cli/v2"
 	"strconv"
@@ -66,6 +67,19 @@ func GenerateClientApp() *cli.App {
 						return MissingArgumentError
 					}
 					apicall.SendRemocon(c.Args().Get(0), c.Args().Get(1))
+					return nil
+				},
+			},
+			{
+				Name: "download",
+				Usage: "download video",
+				ArgsUsage: "QUERY",
+				Action:  func(c *cli.Context) error {
+					if c.NArg() != 1 {
+						_ = cli.ShowAppHelp(c)
+						return MissingArgumentError
+					}
+					videodl.DownloadVideo(c.Args().Get(0))
 					return nil
 				},
 			},

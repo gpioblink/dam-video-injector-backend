@@ -71,7 +71,7 @@ func SendRequest(qrCode, reqNo string, interrupt int) {
 	})
 
 	resp, _ := client.Post(
-		"https://denmoku.clubdam.com/dkdenmoku/DkDamConnectServlet",
+		"https://denmoku.clubdam.com/dkdenmoku/DkDamSendServlet",
 		"application/json",
 		bytes.NewBuffer(data),
 	)

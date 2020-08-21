@@ -7,8 +7,7 @@ import (
 )
 
 func DownloadVideo(query string) {
-	fmt.Println("aaaaaaaaaaaaa")
-	searchQuery := fmt.Sprintf("youtube-dl -f mp4 ytsearch1:%s --output /mnt/virtual_sd", query)
+	searchQuery := fmt.Sprintf("youtube-dl -f mp4 ytsearch1:%s --output /mnt/virtual_sd/video.mp4", query)
 	_ = runCmdStr(searchQuery)
 }
 
