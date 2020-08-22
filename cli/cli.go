@@ -54,6 +54,7 @@ func GenerateClientApp() *cli.App {
 					}
 					i, _ := strconv.Atoi(c.Args().Get(2))
 					apicall.SendRequest(c.Args().Get(0), c.Args().Get(1), i)
+					videodl.ChangeVideo(c.Args().Get(1))
 					return nil
 				},
 			},

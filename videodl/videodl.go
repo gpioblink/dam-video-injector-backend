@@ -6,6 +6,11 @@ import (
 	"os/exec"
 )
 
+func ChangeVideo(reqId string) {
+	changeQuery := fmt.Sprintf("./kplay %s", reqId)
+	_ = runCmdStr(changeQuery)
+}
+
 func DownloadVideo(query string) {
 	searchQuery := fmt.Sprintf("youtube-dl -f mp4 ytsearch1:%s --output /mnt/virtual_sd/video.mp4", query)
 	_ = runCmdStr(searchQuery)
